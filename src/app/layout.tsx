@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "../providers/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -25,14 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
       <html lang="en">
         <body
+        suppressHydrationWarning
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            disableTransitionOnChange
+          >
+          <ClerkProvider>
           {children}
+          <Toaster />
+          </ClerkProvider>
+          </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+    
   );
 }

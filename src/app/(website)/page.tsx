@@ -87,7 +87,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-blue-400 text-black shadow-lg transition-all hover:bg-blue-900/20 hover:shadow-blue-400/25 hover:text-white"
+                  className="border-blue-400 shadow-lg transition-all hover:bg-blue-900/20 hover:shadow-blue-400/25 bg-blue-600 text-white"
                 >
                   Learn More
                 </Button>
